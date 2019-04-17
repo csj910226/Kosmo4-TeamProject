@@ -141,8 +141,8 @@
 				<div class="card card-signin flex-row my-5">
 					<div class="card-body">
 						<h5 class="card-title text-center">회원가입</h5>
-						<form class="form-signin">
-
+						<form class="form-signin"> 
+ 
 							<div class="form-label-group input-group">
 								<input type="text" id="inputUserame" class="form-control"
 									placeholder="Username" required autofocus>
