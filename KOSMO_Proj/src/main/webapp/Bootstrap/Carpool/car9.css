@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+/* main ------------------------------------------------------ */
+#main{
+	position: relative;
+}
+#box_banner_wrap{
+	display: block !important;
+}
+.box_main_top{
+	margin-bottom: 50px;
+}
+.box_main_top .rolling{
+	overflow: hidden;
+	position: relative;
+	width: 786px;
+	height: 554px;
+	border: 1px solid #e1e1e1;
+}
+.box_main_top .rolling_list{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 3152px;
+}
+.box_main_top .rolling_list .tiklelist_wrap{
+	float: left;
+	border: 0;
+}
+.box_board{
+	clear: both;
+}

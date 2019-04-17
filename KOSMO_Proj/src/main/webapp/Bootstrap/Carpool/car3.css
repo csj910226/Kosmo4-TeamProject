@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+/* custume ------------------------------------------------------ */
+.ddcommon {
+	vertical-align: top;
+	font-size: 12px;
+}
+.ddcommon:hover,
+.ddcommon:focus{
+	z-index: 100;
+}
+.ddcommon .ddTitle,
+.borderRadius,
+.borderRadiusTp,
+.borderRadiusTp .border,
+.borderRadius .border,
+.borderRadiusBtm ul li:first-child,
+.borderRadiusTp ul li:last-child,
+.borderRadiusBtm .border{
+
+}
+.dd .ddTitle{
+	background: #fff;
+}
+.dd .ddChild li.selected{
+	background: #edf7f8;
+}
+.dd .ddTitle .ddTitleText{
+	height: 32px;
+	line-height: 32px;
+	padding: 0;
+	padding-left: 5px;
+	color: #303333;
+}
+.borderRadius,
+.borderRadiusTp,
+.dd .ddChild li,
+.dd .ddChild li.selected,
+.dd .ddChild,
+.dd{
+	border-color: #e1e1e1;
+}
+.borderRadius{
+	border-radius: 3px;
+}
+.dd .ddChild li{
+	height: 12px;
+	padding: 8px 5px;
+}
+.dd .divider{
+	border-left-color: #e1e1e1;
+}
+.safe_alert_list .dd,
+.fuel_info .dd{
+	line-height: 12px;
+	text-indent: 0;
+}
+.borderRadiusTp{
+	border-radius: 2px;
+}
+.borderRadiusTp .borderRadiusTp .ddArrow.arrowoff{
+	background-position: 0 100%;
+}
+.enabled._msddli_ .ddlabel{
+	color: #9b9b9b !important;
+}
+.enabled._msddli_.hover .ddlabel,
+.enabled._msddli_.selected .ddlabel{
+	color: #303333 !important;
+}

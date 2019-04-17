@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+#tikleView{
+	z-index: 10;
+}
+
+/* 타이틀 ------------------------------------------------------ */
+.con_title h2{
+	height: 60px;
+	line-height: 60px;
+	color: #9d9d9d;
+}
+/* carpool */
+.tikle_type1.car_pool{
+	background-position: -962px -356px;
+}
+/* ktxpool */
+.tikle_type1.ktx_pool{
+	background-position: -962px -295px;
+}
+/* taxipool */
+.tikle_type1.taxi_pool{
+	background-position: -962px -417px;
+}
+
+/* 티클정보 ------------------------------------------------------ */
+.tikle_view_wrap{
+	position: relative;
+	width: 778px;
+	padding: 0 5px;
+	margin: auto;
+}
+.tikle_view_wrap .box_info{
+	margin-bottom: 35px;
+}
+.tikle_view_wrap .box_info table{
+	width: 778px;
+	margin: auto;
+}
+.tikle_view_wrap .box_info table tr th{
+	vertical-align: middle;
+	width: 113px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #e1e1e1;
+}
+.tikle_view_wrap .box_info table tr td{
+	vertical-align: middle;
+	width: 264px;
+	height: 35px;
+	line-height: 35px;
+	text-indent: 5px;
+	color: #303333;
+	border: 1px solid #e1e1e1;
+}
+.tikle_view_wrap .box_info table .tbl_place th{
+	border: 0;
+}
+.tikle_view_wrap .box_info table .tbl_place td{
+	height: 55px;
+	line-height: 20px;
+	border: 0;
+}
+.tikle_view_wrap .box_info table .tbl_place span{
+	line-height: 35px;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.tikle_view_wrap .box_info .box_mileage div{
+	vertical-align: top;
+}
+.tikle_view_wrap .box_info .box_mileage ul{
+	vertical-align: top;
+	width: 650px;
+}
+
+/* 지도 ------------------------------------------------------ */
+.tikle_view_wrap .box_map{
+	overflow: hidden;
+	width: 778px;
+	height: 385px;
+	border: 1px solid #e1e1e1;
+	margin-bottom: 35px;
+}
+
+/* 추가내용 ------------------------------------------------------ */
+.tikle_view_wrap .line_ltr{
+	width: 780px;
+	border-top: 3px solid #4fbdc4;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
+.tikle_view_wrap .box_detail{
+	width: 788px;
+}
+.tikle_view_wrap .box_detail h2{
+	height: 35px;
+	line-height: 35px;
+	text-indent: 5px;
+	color: #4fbdc4;
+}
+.tikle_view_wrap .box_detail .txt_detail{
+	width: 758px;
+	min-height: 130px;
+	padding: 10px;
+	line-height: 20px;
+	border: 1px solid #e1e1e1;
+	border-radius: 3px;
+}
+
+/* 공유하기 ------------------------------------------------------ */
+.tikle_view_wrap .box_share{
+	position: absolute;
+	top: -47px;
+	right: 3px;
+	width: 114px;
+	height: 34px;
+}
+.tikle_view_wrap .box_share:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.tikle_view_wrap .box_share li{
+	float: left;
+	margin: 0 2px;
+}
+.tikle_view_wrap .box_share li .btn_share{
+	display: block;
+	width: 34px;
+	height: 34px;
+	background: url(/images/pc/icon.png) no-repeat;
+	transition: all .11s ease-in-out;
+	-webkit-transition: all .11s ease-in-out;
+}
+.tikle_view_wrap .box_share li .btn_share_fb{
+	background-position: -148px -171px;
+}
+.tikle_view_wrap .box_share li .btn_share_twit{
+	background-position: -183px -171px;
+}
+.tikle_view_wrap .box_share li .btn_share_google{
+	background-position: -218px -171px;
+}
+.tikle_view_wrap .box_share li .btn_share:hover{
+	transform: translateY(-2px);
+	-webkit-transform: translateY(-2px);
+}
+
+/* 버튼 ------------------------------------------------------ */
+#tikleView .btn_comm{
+	width: 788px;
+	text-align: center;
+}
+#tikleView .btn_comm a{
+	display: inline-block;
+	margin: 0 5px;
+}
+#tikleView .btn_comm .btn_modify,
+#tikleView .btn_comm .btn_delete{
+	width: 90px;
+	color: #fff;
+	background-color: #c3cdce;
+}
+#tikleView .btn_comm .btn_list{
+	width: 160px;
+	color: #fff;
+	background-color: #4fbdc4;
+}
+#tikleView .btn_comm .btn_modify:hover,
+#tikleView .btn_comm .btn_delete:hover{
+	text-decoration: none;
+	background-color: #acc9cc;
+}
+
+#tikleView .btn_comm .btn_list:hover{
+	text-decoration: none;
+	background-color: #519093;
+}

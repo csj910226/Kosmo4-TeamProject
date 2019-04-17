@@ -1,0 +1,714 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+#header #box_header{
+	width: 100%;
+	z-index: 10;
+}
+/* 
+header top -------------------------------------------------------
+.header_top{
+	position: relative;
+	width: 100%;
+	min-width: 1024px;
+	height: 70px;
+	z-index: 100;
+}
+.top_inner{
+	position: relative;
+	width: 1024px;
+	height: 70px;
+	margin: auto;
+}
+
+로고
+.top_inner .logo{
+	position: relative;
+	display: inline-block;
+}
+.top_inner .logo a{
+	display: block;
+	width: 155px;
+	line-height: 50px;
+	margin: 20px 4px 0 0;
+	text-align: center;
+	border-radius: 5px 5px 0 0;
+	font-size: 15px;
+	color: #303333;
+	background-color: #f2f2f2;
+}
+.top_inner .logo .brand_new{
+	position: absolute;
+	top: 24px;
+	right: 5px;
+	font-size: 15px;
+	color: #FD6038;
+}
+.top_inner .logo.selected a{
+	height: 50px;
+	color: #fff;
+}
+.top_inner .tikle.selected a{
+	background-color: #40494c;
+}
+.top_inner .shop.selected a{
+	background-color: #4fbdc4;
+}
+.top_inner .logo a:hover{
+	text-decoration: none;
+}
+
+quick menu
+.top_nav{
+	position: absolute;
+	top: 0;
+	right: 0;
+	vertical-align: top;
+	display: inline-block;
+	height: 70px;
+}
+.top_nav > li{
+	float: left;
+	padding: 29px 15px;
+}
+.top_nav li a{
+	color: #303333;
+}
+
+.top_nav li:hover > .btn_register,
+.top_nav li:focus > .btn_register{
+	color: #000;
+}
+
+레벨 및 마일리지
+.top_nav .level{
+	background: url(/images/pc/bg_dia.gif) 15px 10px no-repeat;
+}
+.top_nav .level a:hover{
+	text-decoration: none;
+}
+.top_nav .level strong{
+	margin-right: 10px;
+}
+
+알림 공통
+.top_nav .alert,
+.top_nav .friend,
+.top_nav .account{
+	position: relative;
+	z-index: 10;
+}
+
+상단알림
+.top_nav .alert_circle{
+	position: absolute;
+	top: 9px;
+	right: 0px;
+	animation: bounce 1000ms ease-in-out infinite;
+	-webkit-animation: bounce 1000ms ease-in-out infinite;
+}
+.top_nav .alert_circle .alert_frt{
+	float: left;
+	display: inline-block;
+	width: 8px;
+	height: 16px;
+	background: url(/images/pc/bg_cntf_alert2.png) no-repeat;
+}
+.top_nav .alert_circle .alert_cnt{
+	float: left;
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	padding: 0 9px 0 0;
+	color: #fff;
+	background: url(/images/pc/bg_cntl_alert2.png) no-repeat right;
+}
+
+알림목록 화살표
+.top_nav .top_arrow{
+	position: absolute;
+	top: 66px;
+	left: 50%;
+	display: none;
+	width: 7px;
+	height: 4px;
+	margin-left: -3px;
+	background: url(/images/pc/icon.png) no-repeat -756px -282px;
+	z-index: 1;
+}
+.top_nav .alert.selected .top_arrow,
+.top_nav .friend:hover .top_arrow,
+.top_nav .friend:focus .top_arrow,
+.top_nav .account:hover .top_arrow,
+.top_nav .account:focus .top_arrow{
+	display: block;
+}
+
+알림목록
+.top_nav .alert_comm{
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: absolute;
+	top: 70px;
+	left: -54px;
+	display: none;
+	max-height: 275px;
+	border: 1px solid #1a1a1a;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+}
+.top_nav .alert_comm .alert_list{
+	position: relative;
+}
+.top_nav .alert_comm .alert_list a{
+	display: block;
+	height: 33px;
+	padding: 8px;
+	border-bottom: 1px solid #0c0c0c;
+	background-color: #fafafa;
+}
+.top_nav .alert_comm .alert_list:last-child a{
+	border-bottom: 0;
+}
+.top_nav .alert_comm .alert_list span{
+	position: absolute;
+	top: 16px;
+	right: 7px;
+	display: block;
+	padding: 3px 6px;
+	border-radius: 9px;
+	font-size: 10px;
+	color: #fff;
+	background-color: #ff6a65;
+	animation: bounce 1000ms ease-in-out infinite;
+	-webkit-animation: bounce 1000ms ease-in-out infinite;
+}
+.top_nav .alert_comm .alert_list a:hover{
+	text-decoration: none;
+	color: #303333;
+	background-color: #f0f0f0;
+}
+.top_nav .alert_comm .alert_list a .user_pic{
+	vertical-align: top;
+	border-radius: 5px;
+}
+
+마우스 오버
+.top_nav .alert.selected,
+.top_nav .friend:hover,
+.top_nav .friend:focus,
+.top_nav .account:hover,
+.top_nav .account:focus{
+	overflow: visible;
+}
+.top_nav .alert.selected .alert_wrap,
+.top_nav .friend:hover .fr_wrap,
+.top_nav .friend:focus .fr_wrap,
+.top_nav .account:hover .my_wrap,
+.top_nav .account:focus .my_wrap{
+	display: block;
+}
+
+알림
+.top_nav .alert .alert_wrap{
+	width: 370px;
+}
+.top_nav .alert .alert_wrap .txt_alert{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 285px;
+	display: inline-block;
+	padding-left: 15px;
+}
+.top_nav .alert .alert_wrap .txt_alert .my_alert_date,
+.top_nav .alert .alert_wrap .txt_nothing_alert{
+	display: block;
+	line-height: 26px;
+}
+
+내친구
+.top_nav .friend .fr_wrap{
+	width: 152px;
+}
+.top_nav .friend .fr_wrap img{
+	vertical-align: middle;
+}
+.top_nav .friend .fr_wrap .txt_fr{
+	vertical-align: middle;
+	padding-left: 15px;
+	line-height: 33px;
+}
+
+본인
+.top_nav .account{
+	padding: 10px 15px;
+}
+.top_nav .account .user_pic{
+	vertical-align: middle;
+	display: inline-block;
+}
+.top_nav .account .name{
+	vertical-align: middle;
+	display: inline-block;
+	width: 78px;
+	line-height: 15px;
+	padding: 0 5px;
+	text-align: center;
+	word-break: break-all;
+}
+.top_nav .account:hover a{
+	text-decoration: none;
+}
+.top_nav .account .ico_arrow_wrap{
+	position: absolute;
+	top: 30px;
+	right: 0px;
+	display: inline-block;
+	padding: 0 3px;
+	line-height: 42px;
+}
+.top_nav .account .ico_arrow_wrap .ico_arrow{
+	display: block;
+	width: 7px;
+	height: 4px;
+	margin-top: 3px;
+	background: url(/images/pc/icon.png) no-repeat -756px -288px;
+}
+.top_nav .account .top_arrow{
+	clear: both;
+	left: 126px;
+}
+.top_nav .account .my_wrap{
+	left: 65px;
+	overflow: hidden;
+	width: 120px;
+	height: 69px;
+	border-radius: 3px;
+}
+.top_nav .account .btn_account{
+	display: block;
+}
+.top_nav .account .my_wrap .btn_mypage,
+.top_nav .account .my_wrap .btn_logout{
+	height: 34px;
+	padding: 0px;
+	border-radius: 0;
+	font-size: 12px;
+	background-color: #fafafa;
+}
+.top_nav .account .my_wrap .btn_mypage:hover,
+.top_nav .account .my_wrap .btn_logout:hover{
+	background-color: #f0f0f0;
+}
+
+등록버튼
+.top_nav .register{
+	padding: 15px 0 15px 15px;
+}
+.top_nav .btn_register{
+	position: relative;
+	display: inline-block;
+	width: 111px;
+	height: 39px;
+	line-height: 39px;
+	border: 1px solid #feb839;
+	border-radius: 5px;
+	text-align: center;
+	text-indent: 11px;
+	font-size: 14px;
+	font-family: 'NanumGothicBold', 'NanumGothic';
+	color: #4c380d;
+	background: #fecd61; Old browsers
+	background: -moz-linear-gradient(top,  #fecd61 0%, #febb46 100%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fecd61), color-stop(100%,#febb46)); Chrome,Safari4+
+	background: -webkit-linear-gradient(top,  #fecd61 0%,#febb46 100%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top,  #fecd61 0%,#febb46 100%); Opera 11.10+
+	background: -ms-linear-gradient(top,  #fecd61 0%,#febb46 100%); IE10+
+	background: linear-gradient(to bottom,  #fecd61 0%,#febb46 100%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fecd61', endColorstr='#febb46',GradientType=0 ); IE6-9
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.top_nav .btn_register img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.top_nav li > .btn_register:hover,
+.top_nav .btn_register:hover{
+	text-decoration: none;
+	color: #4c380d;
+	background: #fed36b; Old browsers
+	background: -moz-linear-gradient(top,  #fed36b 0%, #fed059 100%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed36b), color-stop(100%,#fed059)); Chrome,Safari4+
+	background: -webkit-linear-gradient(top,  #fed36b 0%,#fed059 100%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top,  #fed36b 0%,#fed059 100%); Opera 11.10+
+	background: -ms-linear-gradient(top,  #fed36b 0%,#fed059 100%); IE10+
+	background: linear-gradient(to bottom,  #fed36b 0%,#fed059 100%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed36b', endColorstr='#fed059',GradientType=0 ); IE6-9
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.top_nav .btn_register:active{
+	background: #fec04c; Old browsers
+	background: -moz-linear-gradient(top,  #fec04c 0%, #feb846 100%); FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fec04c), color-stop(100%,#feb846)); Chrome,Safari4+
+	background: -webkit-linear-gradient(top,  #fec04c 0%,#feb846 100%); Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top,  #fec04c 0%,#feb846 100%); Opera 11.10+
+	background: -ms-linear-gradient(top,  #fec04c 0%,#feb846 100%); IE10+
+	background: linear-gradient(to bottom,  #fec04c 0%,#feb846 100%); W3C
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec04c', endColorstr='#feb846',GradientType=0 ); IE6-9
+}
+
+회원가입 및 로그인 ------------------------------------------------------
+.top_nav .btn_fb_login{
+	padding: 18px 15px;
+}
+.top_nav .btn_fb_login a{
+	display: block;
+	overflow: hidden;
+	width: 220px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #3b5998;
+}
+.top_nav .btn_fb_login a span{
+	float: left;
+	display: block;
+	width: 25px;
+	height: 34px;
+	color: #fff;
+	background: url(/images/pc/icon.png) no-repeat -333px -542px;
+}
+.top_nav .before_signup a,
+.top_nav .before_login a{
+	width: auto;
+	height: auto;
+	line-height: 1;
+	font-size: 12px;
+	transition: color .2s ease;
+	-webkit-transition: color .2s ease;
+}
+.top_nav .before_login a{
+	font-weight: bold;
+	color: #fecd61;
+}
+.top_nav .before_signup:hover a,
+.top_nav .before_login:hover a{
+	text-decoration: none;
+	color: #fec04c;
+}
+.top_nav .btn_fb_login:hover a{
+	text-decoration: none;
+	background-color: #2f477a;
+}
+.top_nav .btn_fb_login:hover a span{
+	animation: bounce 1000ms ease-in-out infinite;
+	-webkit-animation: bounce 1000ms ease-in-out infinite;
+}
+
+GNB -------------------------------------------------------
+.gnb_wrap,
+.gnb_shop_wrap{
+	width: 100%;
+	height: 80px;
+	margin: 0px 0 17px 0;
+	z-index: 50;
+	background-color: #40494c;
+}
+.box_gnb{
+	width: 1024px;
+	margin: auto;
+	border-radius: 3px;
+}
+.box_gnb img{
+	vertical-align: top;
+	display: inline-block;
+	width: 80px;
+	height: 70px;
+}
+.gnb{
+	vertical-align: top;
+	height: 80px;
+	margin: auto;
+	border-radius: 3px;
+	z-index: 1;
+}
+.gnb:after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+.gnb .gnb_list{
+	position: relative;
+	float: left;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+}
+.gnb .gnb_list a{
+	display: block;
+	line-height: 80px;
+	color: #fff;
+}
+.gnb .gnb_list .brand_new{
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	color: #ffff00;
+}
+.gnb .gnb_list .gnb_arrow{
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	display: block;
+	width: 48px;
+	height: 0px;
+	margin-left: -24px;
+	background: url(/images/pc/arrow_gnb.gif) no-repeat;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.gnb .gnb_list:hover a{
+	text-decoration: none;
+}
+.gnb .gnb_list.selected > a{
+	color: #4fbdc4;
+	text-decoration: none;
+}
+.gnb .gnb_list:hover .gnb_arrow,
+.gnb .gnb_list.selected .gnb_arrow{
+	bottom: 0px;
+	height: 9px;
+}
+.gnb .gnb_ledger{
+	z-index: 1;
+}
+
+-------- 쇼핑몰 gnb 시작 { --------
+.gnb_shop_wrap{
+	background-color: #4fbdc4;
+}
+.box_gnb.box_shop_gnb .gnb_list{
+	width: 120px;
+}
+.box_shop_gnb .gnb .gnb_list .gnb_arrow{
+	background: url(/images/pc/shop/arrow_gnb_shop.gif) no-repeat;
+}
+.box_shop_gnb .gnb .gnb_list .gnb_arrow,
+.box_shop_gnb .gnb .gnb_list:hover .arrow,
+.box_shop_gnb .gnb .gnb_list.selected .arrow{
+	left: 50%;
+	margin-left: -24px;
+}
+-------- } 쇼핑몰 gnb 끝 --------
+
+gnb submenu
+.box_gsnb{
+	overflow: hidden;
+	position: absolute;
+	top: 80px;
+	left: -400px;
+	width: 544px;
+	height: 0px;
+	padding-left: 480px;
+	text-align: left;
+	background-color: #eee;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	z-index: 1;
+}
+.box_gsnb .gsnb_list{
+	display: inline-block;
+	width: 80px;
+	text-align: center;
+}
+.box_gsnb .gsnb_list a{
+	overflow: hidden;
+	display: block;
+	height: 0px;
+	color: #40494c;
+	background-color: #eee;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.box_gsnb .gsnb_list a:hover{
+	color: #4fbdc4;
+}
+.box_gsnb .gsnb_list.selected a{
+	color: #fff;
+	background-color: #46bbc2;
+}
+.gnb .gnb_ledger:hover .box_gsnb,
+.gnb .gnb_ledger.selected .box_gsnb{
+	display: block;
+	height: 73px;
+}
+.gnb .gnb_ledger:hover .box_gsnb a,
+.gnb .gnb_ledger.selected .box_gsnb a{
+	height: 73px;
+}
+ */
+/* header bottom ------------------------------------------------------- */
+.header_bot{
+	width: 1024px;
+	margin: auto;
+}
+.header_bot:after{
+	content: '';
+	clear: both;
+}
+.header_bot #tikleType1,
+.header_bot #tikleType2,
+.header_bot #tikleParkingType1,
+.header_bot #tikleParkingType2{
+	width: 120px;
+	height: 32px;
+}
+/* ktx풀 출발역, 도착역 */
+.header_bot .place_wrap,
+.header_bot .search_wrap{
+	vertical-align: top;
+	display: inline-block;
+}
+
+/* 카풀, 택시풀 출발지 도착지 */
+.header_bot .start_place,
+.header_bot .arrival_place{
+	position: relative;
+	display: inline-block;
+	width: 223px;
+	height: 32px;
+}
+.header_bot .place_wrap label{
+	display: inline-block;
+	width: 45px;
+	line-height: 34px;
+}
+.header_bot .start_date,
+.header_bot .arrival_date{
+	position: relative;
+}
+.header_bot .place_wrap img{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.header_bot .start_date .txt_add{
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	display: block;
+	line-height: 32px;
+}
+.header_bot .start_place .inp_txt_comm,
+.header_bot .arrival_place .inp_txt_comm{
+	width: 223px;
+	padding-left: 20px;
+}
+.header_bot .start_date .inp_txt_comm,
+.header_bot .arrival_date .inp_txt_comm{
+	width: 167px;
+	padding-left: 22px;
+	color: #9d9d9d;
+}
+
+/* 주차장 */
+.header_bot .parking_place{
+	position: relative;
+	width: 458px;
+	margin-right: 10px;
+}
+.header_bot .parking_place .inp_txt_comm{
+	width: 458px;
+	padding-left: 20px;
+}
+
+/* 버튼 */
+.header_bot .btn_search{
+	vertical-align: top;
+	display: inline-block;
+	width: 107px;
+	height: 34px;
+	line-height: 30px;
+	text-indent: 12px;
+	border-radius: 3px;
+	background: #40494c url(/images/pc/btn/btn_search.gif) no-repeat center;
+}
+
+.header_bot .btn_calendar:active{
+	text-decoration: none;
+	background-color: #0c0c0c;
+}
+.header_bot .btn_search:active{
+	background-color: #e24541;
+}
+
+/* 엘리먼트 마진값 */
+.header_bot .start_place,
+.header_bot .arrival_place,
+.header_bot .start_date
+.header_bot .arrival_date,
+.header_bot .start_date{
+	margin-right: 10px;
+}
+
+/* 주차장 주소 입력 */
+.header_bot .place_parking_wrap{
+	display: inline-block;
+	width: 470px;
+	height: 32px;
+}
+.header_bot .place_parking_wrap .inp_wrap{
+	width: 458px;
+}
+.header_bot .place_parking_wrap .inp_txt_comm{
+	width: 100%;
+	padding-left: 0px;
+}
+/* 
+배너 ------------------------------------------------------
+#mainBannerWrap{
+	overflow: hidden;
+	width: 1024px;
+	min-width: 1024px;
+	height: 150px;
+	margin: auto;
+	margin-top: 20px;
+	text-align: center;
+}
+#mainBannerWrap .inner_banner{
+	overflow: hidden;
+	position: relative;
+	width: 1024px;
+	min-width: 1024px;
+	height: 150px;
+}
+#mainBannerWrap .inner_banner .list_banner a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#mainBannerWrap .banner_control{
+	width: 63px;
+	height: 10px;
+	margin: auto;
+}
+#mainBannerWrap .banner_control button{
+	width: 10px;
+	height: 10px;
+	line-height: 1;
+	margin: 10px 4px 0 4px;
+	border: 0;
+	background: #fff url(/images/pc/icon.png) no-repeat -818px -248px;
+}
+#mainBannerWrap .banner_control button:hover,
+#mainBannerWrap .banner_control button.selected{
+	background-position: -818px -234px;
+} */

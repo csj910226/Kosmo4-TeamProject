@@ -1,0 +1,2266 @@
+@charset "UTF-8";
+@charset "utf-8";
+
+html, body, div, span, iframe, input, button,
+h1, h2, h3, h4, h5, h6, p, blockquote, 
+a, address, img, small, strong, sub, select,
+b, i, dl, dt, dd, ol, ul, li, fieldset, form, hr,
+label, legend, table, caption, tbody, tr, th, td, 
+article, aside, footer, header, hgroup, nav, section {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+ol, ul, dl{
+	list-style-type: none;
+}
+
+/* layout ------------------------------------------------------- */
+html, 
+body{
+	min-width: 1024px;
+	/* height: 100%; */
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+}
+body{
+	position: relative;
+}
+#wrapper,
+#header{
+	min-width: 1024px;
+	z-index: 10;
+}
+.section{
+	margin: 20px 0 100px 0;
+	z-index: 5;
+}
+.content_area{
+	width: 1024px;
+	margin: auto;
+}
+.content_area:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.content,
+.box_main{
+	float: left;
+	width: 788px;
+	margin: auto;
+}
+#aside{
+	float: right;
+}
+.aside,
+.aside_main{
+	margin-left: 6px;
+}
+.aside .snb{
+	width: 228px;
+	height: 100%;
+}
+.con_wrap{
+	border: 1px solid #e1e1e1;
+	border-radius: 3px;
+}
+/* //layout ------------------------------------------------------- */
+
+/* basic setting ------------------------------------------------------- */
+
+/* table still need 'cellspacing="0" in the markup */
+table{
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+	content: "";
+	content: none;
+}
+blockquote, q {quotes: "" "" ;}
+
+/* basic reset */
+body {			   line-height: 1;}
+img {					border: 0;}
+input, img{vertical-align: middle;}
+a:link{		text-decoration: none;}
+a:hover{	text-decoration: underline;}
+a:visited{	text-decoration: none;}
+a:active{	text-decoration: none;}
+fieldset{			 border: none;}
+blockquote, q {		 quotes: none;}
+
+/* hidden */
+.hideClass{
+	display: none !important;
+}
+
+/* font */
+body {
+	font-family: 'NanumGothic', '나눔고딕', 'dotum', '돋움', '나눔바른고딕', Helvetica, sans-serif;
+	font-size: 12px;
+	color: #303333;
+}
+h1{font-size: 18px;}
+h2{font-size: 16px;}
+h3{font-size: 14px;}
+
+/* IE placeholder color */
+.txt_gray{
+	color: #9d9d9d;
+}
+
+/* font ------------------------------------------------------- */
+@font-face {
+  font-family: 'NanumGothic';
+  src: url(../font/NanumGothic.eot);
+  src:	local(※),
+		url(../font/NanumGothic.eot?#iefix) format('embedded-opentype'),
+		url(../font/NanumGothic.woff2) format('x-woff2'),
+		url(../font/NanumGothic.woff) format('woff'),
+		url(../font/NanumGothic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'NanumGothicBold';
+  src: url(../font/NanumGothicBold.eot);
+  src:	local(※),
+		url(../font/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+		url(../font/NanumGothicBold.woff2) format('x-woff2'),
+		url(../font/NanumGothicBold.woff) format('woff'),
+		url(../font/NanumGothicBold.ttf) format('truetype');
+}
+
+/* Ir method */
+.hidden{
+	overflow: hidden !important; 
+	position: absolute !important; 
+	visibility:hidden;
+	top: 50% !important;
+	left: 50% !important; 
+	width: 0 !important; 
+	height: 0 !important; 
+	line-height: 0 !important; 
+	margin: 0 !important; 
+	padding: 0 !important; 
+	font-size: 0 !important; 
+	z-index: -1 !important; 
+} 
+
+/* img radius */
+img.picture{
+	vertical-align: top;
+	border-radius: 10px;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+}
+
+/* textarea */
+textarea{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	line-height: 20px;
+	margin: 0;
+	padding: 5px;
+	border: 1px solid #e1e1e1;
+	border-color: #e1e1e1;
+	border-radius: 3px;
+	resize: vertical;
+	font-size: 12px;
+	font-family: 'NanumGothic', '나눔고딕', 'dotum', '돋움', '나눔바른고딕', Helvetica, sans-serif;
+}
+/* 단위 */
+.txt_unit{
+	vertical-align: top;
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	font-size: 12px;
+	color: #888;
+}
+
+/* basic setting ------------------------------------------------------- */
+
+/* button ------------------------------------------------------ */
+.inp_btn_comm{
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	border: 0px;
+	background-color: transparent;
+}
+button{
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	width: 48%;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #818285;
+	text-align: center;
+	font-family: 'NanumGothic', '나눔고딕', 'dotum', '돋움', '나눔바른고딕', Helvetica, sans-serif;
+	color: #fff;
+	cursor: pointer;
+	background-color: #525355;
+}
+
+button:focus::-moz-focus-inner,
+button:active::-moz-focus-inner{
+	border: 1px solid #a5c7fe;
+}
+
+/* selecbox ------------------------------------------------------- */
+select{
+	font-size: 12px;
+}
+#selCarKindAdd,
+#selCarKindAdd2,
+#selCarKindMod,
+#selCarKindMod2{
+	width: 243px;
+}
+#selComLoc,
+#selUnivLoc{
+	width: 238px;
+}
+#selCarModel,
+#selCarModelY,
+#selCarDetailModel,
+#selCarGrade,
+#selLedger,
+#selCarSttkind2,
+#selAlcoholLowType_1,
+#selAlcoholLowType_2,
+#selAlcoholLowType_3,
+#selAlcoholLowType_4,
+#selAlcoholLowType_5,
+#selAlcoholLowType_6{
+	width: 210px;
+}
+.header_bot #selKtxStartPlace,
+.header_bot #selKtxArriPlace{
+	width: 176px;
+}
+#selKtxRegStarLoc,
+#selKtxRegStarSta,
+#selKtxRegArriLoc,
+#selKtxRegArriSta{
+	width: 148px;
+}
+#selCarSttkind1{
+	width: 145px;
+}
+#selCarKind1,
+#selCarKind2{
+	width: 243px;
+}
+#selCarRegPur,
+#selKtxRegPur,
+#selTaxiRegPur{
+	width: 124px;
+}
+#selJointel,
+#selLoginFbtel,
+#selJoinBirY,
+#selJoinBirM,
+#selJoinBirD{
+	width: 113px;
+}
+
+.reg_area #selJointel,
+#selCarRegPer,
+#selKtxRegPer,
+#selTaxiRegPer{
+	width: 108px;
+}
+#selBoardSearch,
+#selParkingDefaultTime,
+#selParkingAddTime01,
+#selParkingAddTime02,
+#selParkingAddTime03,
+#selParkingAddTime04,
+#selParkingAddTime05{
+	width: 100px;
+}
+#selSummaryYear{
+	width: 98px;
+}
+#selCarCountryPopup,
+#selCarCountry,
+#selCarCom{
+	width: 94px;
+}
+#selCarRegNoon,
+#selCarRegHour,
+#selCarRegMin,
+#selKtxRegNoon,
+#selKtxRegHour,
+#selTaxiRegNoon,
+#selTaxiRegHour,
+#selTaxiRegMin,
+#selCarSttkind1,
+#selCarAlarmDur,
+#selCarAlarmDurMod,
+#selAlcoholType_1,
+#selAlcoholType_2,
+#selAlcoholType_3,
+#selAlcoholType_4,
+#selAlcoholType_5,
+#selAlcoholType_6,
+#selAlcoholHour,
+#selAlcoholMin{
+	width: 85px;
+}
+
+/* 주차장 운영요일 및 시간 */
+#selParkingYear01,
+#selParkingYear02,
+#selParkingYear03,
+#selParkingYear04,
+#selParkingDay01,
+#selParkingDay02,
+#selParkingDay03,
+#selParkingDay04,
+#selParkingHour01,
+#selParkingHour02,
+#selParkingHour03,
+#selParkingHour04,
+#selParkingEndHour01,
+#selParkingEndHour02,
+#selParkingEndHour03,
+#selParkingEndHour04,
+#selParkingMin01,
+#selParkingMin02,
+#selParkingMin03,
+#selParkingMin04,
+#selParkingEndMin01,
+#selParkingEndMin02,
+#selParkingEndMin03,
+#selParkingEndMin04,
+
+/* 운전자 등록 알림반경 select box */
+#selDriverAlarmDistance01,
+#selDriverAlarmDistance02,
+#selDriverAlarmDistance03,
+#selDriverAlarmDistance04,
+
+/* 운전자 등록 활동시간 select box */
+#selDriverDay_1_1,
+#selDriverDay_1_2,
+#selDriverDay_1_3,
+#selDriverDay_1_4,
+#selDriverDay_2_1,
+#selDriverDay_2_2,
+#selDriverDay_2_3,
+#selDriverDay_2_4,
+#selDriverDay_3_1,
+#selDriverDay_3_2,
+#selDriverDay_3_3,
+#selDriverDay_3_4,
+#selDriverDay_4_1,
+#selDriverDay_4_2,
+#selDriverDay_4_3,
+#selDriverDay_4_4,
+#selDriverHour_1_1,
+#selDriverHour_1_2,
+#selDriverHour_1_3,
+#selDriverHour_1_4,
+#selDriverHour_2_1,
+#selDriverHour_2_2,
+#selDriverHour_2_3,
+#selDriverHour_2_4,
+#selDriverHour_3_1,
+#selDriverHour_3_2,
+#selDriverHour_3_3,
+#selDriverHour_3_4,
+#selDriverHour_4_1,
+#selDriverHour_4_2,
+#selDriverHour_4_3,
+#selDriverHour_4_4,
+#selDriverMin_1_1,
+#selDriverMin_1_2,
+#selDriverMin_1_3,
+#selDriverMin_1_4,
+#selDriverMin_2_1,
+#selDriverMin_2_2,
+#selDriverMin_2_3,
+#selDriverMin_2_4,
+#selDriverMin_3_1,
+#selDriverMin_3_2,
+#selDriverMin_3_3,
+#selDriverMin_3_4,
+#selDriverMin_4_1,
+#selDriverMin_4_2,
+#selDriverMin_4_3,
+#selDriverMin_4_4,
+#selDriverEndHour_1_1,
+#selDriverEndHour_1_2,
+#selDriverEndHour_1_3,
+#selDriverEndHour_1_4,
+#selDriverEndHour_2_1,
+#selDriverEndHour_2_2,
+#selDriverEndHour_2_3,
+#selDriverEndHour_2_4,
+#selDriverEndHour_3_1,
+#selDriverEndHour_3_2,
+#selDriverEndHour_3_3,
+#selDriverEndHour_3_4,
+#selDriverEndHour_4_1,
+#selDriverEndHour_4_2,
+#selDriverEndHour_4_3,
+#selDriverEndHour_4_4,
+#selDriverEndMin_1_1,
+#selDriverEndMin_1_2,
+#selDriverEndMin_1_3,
+#selDriverEndMin_1_4,
+#selDriverEndMin_2_1,
+#selDriverEndMin_2_2,
+#selDriverEndMin_2_3,
+#selDriverEndMin_2_4,
+#selDriverEndMin_3_1,
+#selDriverEndMin_3_2,
+#selDriverEndMin_3_3,
+#selDriverEndMin_3_4,
+#selDriverEndMin_4_1,
+#selDriverEndMin_4_2,
+#selDriverEndMin_4_3,
+#selDriverEndMin_4_4,
+/* //운전자 등록 활동시간 select box */
+
+#selParkingtel,
+.parking_area .inp_phone{
+	width: 84px;
+}
+#selViewPer{
+	width: 78px;
+}
+#selPhone,
+#selRel1,
+#selRel2,
+#selRel3,
+#selRel1Tel,
+#selRel2Tel,
+#selRel3Tel,
+#selPopupRel1,
+#selPopupRel2,
+#selPopupRel3,
+#selPopupRel1Tel,
+#selPopupRel2Tel,
+#selPopupRel3Tel,
+#selPAuth,
+#selNorBirY,
+#selNorBirM,
+#selNorBirD{
+	width: 64px;
+}
+#selCarRegHour_msdd,
+#selKtxRegHour_msdd,
+#selKtxRegStarSta_msdd,
+#selKtxRegArriSta_msdd,
+#selTaxiRegHour_msdd,
+#selJoinBirM_msdd,
+#selAlcoholHour_msdd,
+
+/* 주차장 운영요일 및 시간 */
+#selParkingDefaultTime_msdd,
+#selParkingAddTime01_msdd,
+#selParkingAddTime02_msdd,
+#selParkingAddTime03_msdd,
+#selParkingAddTime04_msdd,
+#selParkingAddTime05_msdd,
+#selParkingHour01_msdd,
+#selParkingHour02_msdd,
+#selParkingHour03_msdd,
+#selParkingHour04_msdd,
+
+/* 운전자 등록 활동시간 select box */
+#selDriverHour_1_1_msdd,
+#selDriverHour_1_2_msdd,
+#selDriverHour_1_3_msdd,
+#selDriverHour_1_4_msdd,
+#selDriverHour_2_1_msdd,
+#selDriverHour_2_2_msdd,
+#selDriverHour_2_3_msdd,
+#selDriverHour_2_4_msdd,
+#selDriverHour_3_1_msdd,
+#selDriverHour_3_2_msdd,
+#selDriverHour_3_3_msdd,
+#selDriverHour_3_4_msdd,
+#selDriverHour_4_1_msdd,
+#selDriverHour_4_2_msdd,
+#selDriverHour_4_3_msdd,
+#selDriverHour_4_4_msdd
+/* //운전자 등록 활동시간 select box */
+{
+	margin: 0 10px;
+}
+.header_bot #tikleType1_msdd,
+.header_bot #tikleType2_msdd,
+.header_bot #tikleParkingType1_msdd,
+.header_bot #tikleParkingType2_msdd,
+#selRel1_msdd,
+#selRel2_msdd,
+#selRel3_msdd,
+#selCarRegPer_msdd,
+#selKtxRegPer_msdd,
+#selTaxiRegPer_msdd{
+	margin-right: 10px;
+}
+#selCarSttkind1_msdd,
+#selCarAlarmDur_msdd,
+#selCarAlarmDurMod_msdd,
+#selCarCountry_msdd,
+#selCarModel_msdd,
+#selCarDetailModel_msdd{
+	margin-right: 20px;
+}
+#selViewPer_msdd{
+	margin-right: 5px;
+}
+#selJoinEmail_msdd,
+#selLoginEmail_msdd,
+#selLoginFbEmail_msdd,
+
+/* 주차장 운영요일 및 시간 */
+#selParkingEndMin01_msdd,
+#selParkingEndMin02_msdd,
+#selParkingEndMin03_msdd,
+#selParkingEndMin04_msdd,
+
+/* 운전자 등록 활동시간 select box */
+#selDriverEndMin_1_1_msdd,
+#selDriverEndMin_1_2_msdd,
+#selDriverEndMin_1_3_msdd,
+#selDriverEndMin_1_4_msdd,
+#selDriverEndMin_2_1_msdd,
+#selDriverEndMin_2_2_msdd,
+#selDriverEndMin_2_3_msdd,
+#selDriverEndMin_2_4_msdd,
+#selDriverEndMin_3_1_msdd,
+#selDriverEndMin_3_2_msdd,
+#selDriverEndMin_3_3_msdd,
+#selDriverEndMin_3_4_msdd,
+#selDriverEndMin_4_1_msdd,
+#selDriverEndMin_4_2_msdd,
+#selDriverEndMin_4_3_msdd,
+#selDriverEndMin_4_4_msdd,
+/* //운전자 등록 활동시간 select box */
+
+/* 음주측정 alcohol low type */
+#selAlcoholLowType_1_msdd,
+#selAlcoholLowType_2_msdd,
+#selAlcoholLowType_3_msdd,
+#selAlcoholLowType_4_msdd
+/* //음주측정 alcohol low type */
+{
+	margin-left: 10px;
+}
+#selCarModel_msdd,
+#selCarModelY_msdd{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* //selecbox ------------------------------------------------------- */
+
+/* btn ------------------------------------------------------- */
+.btn_comm{
+	height: 100px;
+	margin-top: 35px;
+	text-align: center;
+}
+.btn_type1,
+.btn_type2,
+.btn_type3,
+.btn_type4{
+	vertical-align: top;
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+}
+.btn_close,
+.btn_cancel{
+	margin-right: 10px;
+}
+.btn_comm a:hover{
+	text-decoration: none;
+}
+.btn_keep{
+	width: 100px;
+	margin-left: 10px;
+	border: 0;
+	background-color: #4fbdc4;
+}
+.btn_keep:hover{
+	background-color: #519093;
+}
+
+
+/* label, input:checkbox, input:image input:submit ------------------------------------------------------ */
+label,
+.inp_radio_comm,
+.inp_chk_comm{
+	font-size: 12px;
+	cursor: pointer;
+}
+input[type="submit"],
+input[type="search"],
+input[type="tel"],
+input[type="date"],
+input[type="text"]{
+	font-family: 'NanumGothic', '나눔고딕', 'dotum', '돋움', '나눔바른고딕', Helvetica, sans-serif;
+}
+input[type="file"]{
+	overflow: hidden !important; 
+	position: absolute !important; 
+	top: 0 !important;
+	left: 0 !important; 
+	width: 0 !important; 
+	height: 0 !important; 
+	line-height: 0 !important; 
+	margin: 0 !important; 
+	padding: 0 !important; 
+	font-size: 0 !important; 
+	z-index: -1 !important; 
+}
+input[type="image"]{
+	cursor: pointer;
+}
+input[type="submit"]{
+	border: 0px;
+	border-radius: 0px;
+	font-size: 14px;
+	background-color: #fff;
+	cursor: pointer;
+}
+input:disabled{
+	background-color: #fff;
+}
+[placeholder]:focus::-webkit-input-placeholder{
+	opacity: 0;
+	transition: opacity 0.5s 0.5s ease; 
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill{
+	box-shadow: 0 0 0px 1000px white inset;
+}
+.icheckbox_flat-aero + label,
+.iradio_flat-aero + label{
+	color: #969696 !important;
+	transition: color .1s ease;
+	-webkit-transition: color .1s ease;
+}
+.icheckbox_flat-aero.checked + label,
+.iradio_flat-aero.checked + label{
+	color: #303333 !important;
+}
+
+/* input text ------------------------------------------------------- */
+.inp_wrap{
+	display: inline-block;
+	overflow: hidden;
+	height: 32px;
+	border: 1px solid #e1e1e1;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.inp_txt_comm{
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	vertical-align: top;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	border: 0;
+	text-indent: 5px;
+	font-size: 12px;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.inp_mid_wrap{
+	margin: 0 10px;
+}
+
+/* 여성제한 ------------------------------------------------------ */
+.only_women .txt_add{
+	opacity: .3;
+	transition: opacity .3s ease;
+	-webkit-transition: opacity .3s ease;
+}
+.only_women .icheckbox_flat-aero.checked ~ .txt_add{
+	opacity: 1;
+}
+
+/* 설명 텍스트 ------------------------------------------------------ */
+.txt_add{
+	line-height: 15px;
+	padding-left: 5px;
+	color: #9b9b9b;
+}
+.txt_add span{
+	vertical-align: middle;
+	line-height: 19px;
+	font-size: 4px;
+	color: #9b9b9b;
+}
+
+/* temp item control ------------------------------------------------------ */
+.temp_wrap{
+	position: relative;
+}
+.temp_wrap .txt_unit{
+	margin: 0 5px;
+}
+.temp_wrap .temp_contents{
+	height: 34px;
+	margin-bottom: 5px;
+}
+.item_control{
+	position: absolute;
+	top: 0px;
+	right: 247px;
+	width: 85px;
+	height: 34px;
+}
+.item_control .btn_add_via,
+.item_control .btn_remove_via{
+	width: 40px;
+	height: 34px;
+	cursor: pointer;
+	transition: all .11s ease-in-out;
+	-webkit-transition: all .11s ease-in-out;
+}
+.item_control .btn_add_via{
+	margin-right: 5px;
+	background: url(/images/pc/icon.png) no-repeat -215px -419px;
+}
+.item_control .btn_remove_via{
+	background: url(/images/pc/icon.png) no-repeat -256px -419px;
+}
+.item_control .btn_add_via:hover{
+	background-position: -215px -384px;
+}
+.item_control .btn_remove_via:hover{
+	background-position: -256px -384px;
+}
+.item_control button:active{
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .8);
+}
+
+/* 별점 ------------------------------------------------------ */
+/* -------- 내가 받은 별점 -------- */
+.box_receive_star{
+	vertical-align: top;
+	float: right;
+	width: 167px;
+	height: 30px;
+	background: url(/images/pc/bg_star.png) no-repeat -171px 0;
+}
+.box_receive_star span{
+	display: block;
+	height: 30px;
+	background: url(/images/pc/bg_star.png) no-repeat left top;
+	text-indent: -9999em;
+}
+
+/* -------- 주차장후기 받은 별점 -------- */
+.parking_assess_wrap .box_receive_star{
+	position: absolute;
+	top: 0px;
+	left: 45px;
+	width: 73px;
+	height: 13px;
+	margin: 0;
+	background: url(/images/pc/bg_star_parking.png) no-repeat -75px 0;
+}
+.parking_assess_wrap .box_receive_star span{
+	height: 13px;
+	background: url(/images/pc/bg_star_parking.png) no-repeat left top;
+}
+
+/* -------- 차계부 받은 별점 -------- */
+.ledger_book .box_receive_star{
+	float: none;
+}
+
+/* -------- 쇼핑몰 리스트 제품 받은 평점 -------- */
+.point_shop_list .box_receive_star{
+	float: none;
+	width: 140px;
+	height: 20px;
+	margin: auto;
+	background: url(/images/pc/bg_star_shop.png) no-repeat -140px top;
+}
+.point_shop_list .box_receive_star span{
+	background: url(/images/pc/bg_star_shop.png) no-repeat left top;
+}
+
+/* -------- 내가 줄 별점 -------- */
+.box_star{
+	vertical-align: top;
+	display: inline-block;
+	width: 190px;
+	height: 30px;
+}
+.box_star .point_star{
+	float: left;
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin: 0 4px;
+	border: 0;
+	cursor: pointer;
+	background: url(/images/pc/bg_star.png) no-repeat;
+	background-position:  -171px 0;
+}
+.box_star .point_star.selected{
+	background-position:  0px 0;
+}
+.box_star:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* -------- 주차장후기 내가 줄 별점 -------- */
+.box_parking_star{
+	width: 167px;
+}
+.box_parking_star .point_star{
+	margin: 0 1.5px;
+}
+
+/* tooltip------------------------------------------------------ */
+.tooltip_wrap{
+	position: relative;
+}
+.tooltip{
+	vertical-align: middle;
+	display: inline-block;
+	z-index: 10;
+}
+.tooltip img{
+	opacity: .6;
+	transition: opacity .2s ease;
+	-webkit-transition: opacity .2s ease;
+}
+.tooltip .box_tooltip{
+	display: none;
+	position: absolute;
+	line-height: 18px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+	background-color: #3c3c3c;
+	transition: opacity .2s ease;
+	-webkit-transition: opacity .2s ease;
+}
+.tooltip:hover img{
+	opacity: 1;
+}
+.tooltip:hover .box_tooltip{
+	display: block;
+}
+.tooltip .box_tooltip .txt_tooltip{
+	position: relative;
+}
+.tooltip .box_tooltip .txt_tooltip .arrow{
+	position: absolute;
+	bottom: -17px;
+	left: 0px;
+	display: block;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #3c3c3c;
+}
+
+/* -------- 카풀 금액 -------- */
+.tooltip:hover .price_tip{
+	top: -75px;
+	left: 123px;
+	width: 210px;
+}
+
+/* -------- 대인배상 -------- */
+.tooltip:hover .recompense_tip{
+	top: -266px;
+	left: -12px;
+	width: 440px;
+	text-align: left;
+}
+#tikleView .tooltip:hover .recompense_tip{
+	top: -257px;
+	left: -15px;
+	font-weight: normal;
+	z-index: 10;
+}
+
+/* -------- 인증 -------- */
+.tooltip:hover .auth_tip{
+	top: -50px;
+	left: -12px;
+}
+.tooltip:hover .auth_detail_tip{
+	top: -124px;
+	left: 0px;
+}
+.tooltip:hover .auth_detail_tip .arrow{
+	/* left: 76px; */
+	left: 65px;
+}
+
+/* -------- 차계부 주유입력 주유형태 -------- */
+.tooltip:hover .fuel_tip{
+	top: 50px;
+	left: 100px;
+	right: -50px;
+	z-index: 10;
+}
+.tooltip:hover .fuel_tip .arrow{
+	top: 0px;
+	left: -30px;
+	bottom: 0px;
+	border-right: 10px solid #3c3c3c;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+/* -------- 차계부 내역 구간연비 -------- */
+.tooltip:hover .part_fuel_tip{
+	top: 0px;
+	left: 28px;
+	right: -358px;
+	text-align: left;
+	font-weight: normal;
+	z-index: 10;
+}
+.tooltip:hover .part_fuel_tip .arrow{
+	top: 0px;
+	left: -30px;
+	border-right: 10px solid #3c3c3c;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+/* and so on ------------------------------------------------------ */
+.sign_at{
+	display: inline-block;
+	margin: 0 5px;
+}
+
+/* content title ------------------------------------------------------- */
+.content .con_title{
+	width: 788px;
+	border-top: 3px solid #4fbdc4;
+}
+/* view */
+.con_title .tikle_type1,
+.con_title .tikle_type2{
+	display: inline-block;
+}
+.con_title h1{
+	height: 60px;
+	line-height: 60px;
+	padding-left: 62px;
+	margin-right: 20px;
+	color: #4fbdc4;
+	background: url(/images/pc/icon.png) no-repeat -962px -234px;
+}
+
+/* tiklelist ------------------------------------------------------ */
+.tiklelist .txt_women{
+	position: absolute;
+	bottom: 12px;
+	right: 0px;
+	display: block;
+	padding: 5px 8px;
+	border-radius: 3px 0 0 3px;
+	color: #fff;
+	background-color: #f55881;
+}
+/* list division */
+.tiklelist_dvs{
+	width: 788px;
+	margin: auto;
+}
+.tiklelist_dvs td{
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #ddd;
+	border-bottom: 0px;
+	text-indent: 10px;
+	color: #9d9d9d;
+	text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
+	background-color: #eee;
+}
+.tiklelist_dvs .list_dvs1{
+	width: 78px;
+}
+.tiklelist_dvs .list_dvs2{
+	width: 274px;
+}
+.tiklelist_dvs .list_dvs3{
+	width: 83px;
+	padding-right: 5px;
+	text-align: right;
+}
+.tiklelist_dvs .list_dvs4,
+.tiklelist_dvs .list_dvs5{
+	width: 274px;
+}
+
+/* list */
+.tiklelist_wrap{
+	width: 786px;
+	border: 1px solid #e1e1e1;
+	margin: auto;
+}
+.tiklelist{
+	position: relative;
+	vertical-align: top;
+	border-bottom: 1px solid #e1e1e1;
+}
+.tiklelist .link_tikleview{
+	display: block;
+}
+.tiklelist .link_tikleview:hover .name{
+	text-decoration: none;
+}
+.tiklelist .link_tikleview:hover{
+	background-color: #fafafa;
+}
+.box_tikle{
+	height: 100px;
+	padding: 10px 0px 0px 8px;
+	padding-bottom: 0;
+}
+.box_tikle .tikle_con{
+	overflow: hidden;
+	position: relative;
+	height: 100px;
+}
+
+/* 사용자 사진 및 이름 */
+.box_tikle .user_pic{
+	float: left;
+	margin-right: 22px;
+}
+.box_tikle .user_pic .name{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	width: 60px;
+	line-height: 13px;
+	margin-top: 10px;
+	text-align: center;
+	color: #303333;
+}
+
+/* 티클정보 */
+.box_tikle .box_tikle_info1{
+	display: inline-block;
+	width: 520px;
+}
+/* 장소 */
+.box_tikle_info1 .tikle_loc{
+	width: 520px;
+	height: 42px;
+	line-height: 37px;
+}
+.box_tikle_info1 .tikle_loc .tikle_place{
+	vertical-align: top;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 220px;
+	font-weight: bold;
+	font-size: 13px;
+	color: #303333;
+}
+.box_tikle_info1 .tikle_loc .ico_dir_wrap{
+	vertical-align: top;
+	display: inline-block;
+	width: 36px;
+	height: 37px;
+	margin: 0 22px;
+	background: url(/images/pc/bg_arrow.png) no-repeat;
+}
+
+/* 시간정보 , 목적*/
+.box_tikle_info1 .tikle_date,
+.box_tikle_info1 .tikle_purpose{
+	vertical-align: top;
+	display: inline-block;
+	width: 50%;
+	line-height: 13px;
+}
+
+/* 시간정보 */
+.box_tikle_info1 .tikle_date{
+	color: #0faaf0;
+}
+
+/* 목적 */
+.box_tikle_info1 .tikle_purpose{
+	float: right;
+	color: #303333;
+	text-align: right;
+}
+
+/* 유형 */
+.box_tikle_info2{
+	vertical-align: top;
+	display: inline-block;
+	width: 176px;
+}
+.box_tikle_info2 .tikle_type{
+	vertical-align: top;
+	display: inline-block;
+	width: 88px;
+	text-align: right;
+}
+.box_tikle_info2 .tikle_type1,
+.box_tikle_info2 .tikle_seat{
+	height: 42px;
+	line-height: 37px;
+}
+.box_tikle_info2 .tikle_type span{
+	display: block;
+	width: 83px;
+	padding-right: 5px;
+	color: #303333;
+}
+.box_tikle_info2 .tikle_type .tikle_type1{
+	color: #4fbdc4;
+}
+.box_tikle_info2 .tikle_type .tikle_seat{
+	color: #9d9d9d;
+}
+.box_tikle_info2 .tikle_type .tikle_seat strong{
+	font-size: 20px;
+}
+
+/* 마감 */
+.box_tikle_info2 .tikle_end{
+	vertical-align: top;
+	display: inline-block;
+	width: 83px;
+	line-height: 54px;
+	padding-right: 5px;
+	text-align: right;
+	font-size: 1.7em;
+	color: #F00;
+}
+
+/* 인증정보 */
+.tiklelist .box_auth_cate{
+	clear: both;
+	position: absolute;
+	top: 66px;
+	left: 0px;
+	right: 160px;
+}
+.box_auth_cate .auth_cate_ico{
+	vertical-align: middle;
+	display: inline-block;
+	padding: 5px 8px;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #4ebdc4;
+/* 	background: url(/images/pc/icon.png) no-repeat -757px -305px; */
+}
+.tiklelist .box_auth_cate .auth_cate_list{
+	vertical-align: middle;
+	display: none;
+	padding: 5px 8px;
+	padding-right: 5px;
+	color: #8c8c8c;
+}
+
+/* 운전자 인증정보 */
+.driverlist .box_auth_cate{
+	clear: both;
+	padding-left: 80px;
+	margin-top: 10px;
+}
+.driverlist .box_auth_cate .auth_cate_list{
+	vertical-align: middle;
+	display: none;
+	padding: 5px 8px;
+	padding-right: 5px;
+	color: #8c8c8c;
+}
+
+/* 인증된것 CSS */
+.tiklelist .box_auth_cate .auth_cate_list.auth_ok,
+.driverlist .box_auth_cate .auth_cate_list.auth_ok{
+	display: inline-block;
+}
+
+/* 함께 아는 친구 */ 
+.box_cofriends{
+	clear: both;
+	width: 100%;
+	height: 30px;
+	padding: 5px 0;
+	text-align: right;
+}
+.box_cofriends h1{
+	vertical-align: middle;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 24px;
+	font-size: 11px;
+	color: #3b618c;
+	background: url(/images/pc/icon.png) no-repeat -215px -555px;
+}
+.box_cofriends ul{
+	vertical-align: middle;
+	display: inline-block;
+	width: 220px;
+	height: 30px;
+	text-align: left;
+}
+.box_cofriends ul:after{
+	content: '';
+	clear: both;
+}
+.box_cofriends ul .cofriends_list{
+	display: inline-block;
+}
+.box_cofriends ul .cofriends_list .link_fb{
+	display: block;
+	width: 30px;
+	margin: 0 5px;
+	height: auto;
+}
+.box_cofriends ul .cofriends_list .link_fb img{
+	display: block;
+	margin: auto;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; 
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); 
+	opacity: .6; 
+	transition: all .2s cubic-bazier(0.5, 2, 0.5, -1);
+}
+.box_cofriends ul .cofriends_list .link_fb span{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #303333;
+}
+.box_cofriends ul .cofriends_list .link_fb:hover{
+	text-decoration: none;
+}
+.box_cofriends ul .cofriends_list .link_fb:hover img{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); 
+	opacity: 1;
+	animation: bounce 400ms ease-in-out 1;
+	-webkit-animation: bounce 400ms ease-in-out 1;
+}
+
+/* 주차장 리스트 ------------------------------------------------------ */
+#parkingList .link_tikleview:hover{
+	text-decoration: none;
+}
+#parkingList .parking_seg{
+	position: relative;
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin-right: 22px;
+	.margin-top: 10px;
+	border-radius: 5px;
+}
+#parkingList .box_tikle,
+#parkingList .box_tikle .tikle_con{
+	height: auto;
+}
+#parkingList .box_tikle_info1 .tikle_loc{
+	height: 20px;
+}
+#parkingList .tiklelist .box_auth_cate{
+	position: static;
+	padding-bottom: 10px;
+}
+
+/* -------- 주차장 flag -------- */
+#parkingList .parking_seg div{
+	position: absolute;
+	top: 21px;
+	left: -10px;
+	width: 40px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+}
+#parkingList .parking_seg span{
+	position: absolute;
+	top: 0px;
+	right: -10px;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-left: 10px solid transparent;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+}
+
+/* 민영 */
+#parkingList .parking_private{
+	background-color: royalblue;
+}
+#parkingList .parking_private span{
+	border-left-color: royalblue;
+}
+
+/* 공영 */
+#parkingList .parking_public{
+	background-color: olivedrab;
+}
+#parkingList .parking_public span{
+	border-left-color: olivedrab;
+}
+
+/* 개인 */
+#parkingList .parking_individual{
+	background-color: orange;
+}
+#parkingList .parking_individual span{
+	border-left-color: orange;
+}
+
+/* -------- 유형 및 금액 -------- */
+#parkingList .box_tikle .parking_type{
+	padding-right: 50px;
+	font-weight: bold;
+	color: #4fbdc4;
+}
+#parkingList .box_tikle .tikle_date{
+	color: #9d9d9d;
+}
+#parkingList .box_tikle_info1{
+	width: 599px;
+}
+#parkingList .box_tikle_info1 h1,
+#parkingList .box_tikle_info1 h2{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: top;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+	font-size: 15px;
+	color: #303333;
+}
+#parkingList .box_tikle_info1 h1{
+	width: 287px;
+}
+#parkingList .box_tikle_info1 h2{
+	width: 272px;
+	font-weight: normal;
+}
+#parkingList .box_tikle_info2{
+	width: 92px;
+}
+#parkingList .box_tikle_info2 .tikle_type span{
+	width: 92px;
+	height: 30px;
+	line-height: 30px;
+}
+#parkingList .box_tikle_info2 .tikle_type .tikle_seat{
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+}
+
+/* 운전자 리스트 ------------------------------------------------------ */
+.link_driver_reg{
+	display: block;
+	width: 135px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+	border: 1px solid #FEB839;
+	border-radius: 3px;
+	color: #303333;
+	background-color: #FEBB46;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+}
+.link_driver_reg:hover{
+	text-decoration: none;
+	background-color: #FED059;
+}
+.driverlist_wrap{
+	width: 786px;
+	border: 1px solid #e1e1e1;
+	margin: auto;
+}
+.driverlist{
+	position: relative;
+	vertical-align: top;
+	border-bottom: 1px solid #e1e1e1;
+}
+.driverlist .box_active{
+	padding: 10px 0px 10px 8px;
+}
+.driverlist .box_active_info{
+	overflow: hidden;
+	position: relative;
+}
+.driverlist:hover{
+	background-color: #FAFAFA;
+}
+.driverlist a{
+	color: #303333;
+}
+.driverlist a:hover{
+	text-decoration: none;
+}
+
+/* 사용자 사진 및 이름 */
+.driverlist .user_pic{
+	float: left;
+	margin-right: 22px;
+}
+.driverlist .user_pic .name{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	width: 60px;
+	line-height: 13px;
+	margin-top: 10px;
+	text-align: center;
+	color: #303333;
+}
+
+/* 활동위치, 시간, 범위 */
+.driverlist .active_info table{
+	width: 696px;
+	line-height: 20px;
+	margin-bottom: 15px;
+	text-align: left;
+	font-size: 12px;
+}
+.driverlist .active_info table th{
+	width: 60px;
+}
+.driverlist .active_info table td{
+	width: 288px;
+}
+.driverlist .active_info table td div{
+	width: 279px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.driverlist .active_info .car_num,
+.driverlist .active_info .car_kind{
+	line-height: 20px;
+	color: #0FAAF0;
+}
+
+/* 메시지 보내기 버튼 */
+.driverlist .box_active_info .btn_driver_msg{
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	display: block;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	border-color: #FF6A66;
+	border-radius: 3px;
+	text-align: center;
+	background-color: #FF6A66;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+}
+.driverlist .box_active_info .btn_driver_msg:hover{
+	background-color: #e24541;
+}
+
+/* 내 등록글, 받은 예약, 한 예약 에 글이 없을때------------------------------------------------------ */
+.list_nothing{
+	padding: 20px 0;
+	text-align: center;
+}
+.list_nothing p{
+	display: inline-block;
+	padding-right: 10px;
+}
+.list_nothing a{
+	display: inline-block;
+	vertical-align: middle;
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #FEB839;
+	border-radius: 5px;
+	font-size: 14px;
+	color: #303333;
+	background: #fecd61; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fecd61 0%, #febb46 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fecd61), color-stop(100%,#febb46)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fecd61 0%,#febb46 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fecd61 0%,#febb46 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fecd61 0%,#febb46 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fecd61 0%,#febb46 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fecd61', endColorstr='#febb46',GradientType=0 ); /* IE6-9 */
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+.list_nothing a:hover{
+	text-decoration: none;
+	color: #4c380d;
+	background: #fed36b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fed36b 0%, #fed059 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed36b), color-stop(100%,#fed059)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fed36b 0%,#fed059 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fed36b 0%,#fed059 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fed36b 0%,#fed059 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fed36b 0%,#fed059 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fed36b', endColorstr='#fed059',GradientType=0 ); /* IE6-9 */
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+}
+
+/* 댓글 ------------------------------------------------------ */
+.reply_wrap{
+	margin-top: 35px;
+	padding: 0 10px 10px 10px;
+	border: 1px solid #e1e1e1;
+	color: #9b9b9b;
+	background-color: #f4f8f9;
+}
+.reply_wrap li{
+	padding: 10px 0;
+	border-bottom: 1px solid #fff;
+}
+.reply_wrap li .name{
+	color: #303333;
+}
+.reply_wrap li .btn_cmt_con{
+	line-height: 20px;
+	padding: 10px;
+	border-radius: 5px;
+	color: #303333;
+	background-color: #fff;
+}
+.reply_wrap .reply,
+.reply_wrap .reply_cmt{
+	/* border-top: 1px dotted #e1e1e1; */
+}
+.reply_wrap .header_cmt{
+	position: relative;
+	height: 30px;
+	line-height: 20px;
+}
+.reply_wrap .date{
+	padding: 0 10px 0 20px;
+}
+.reply_wrap .btn_reply,
+.reply_wrap .btn_reply_good,
+.reply_wrap .btn_reply_bad{
+	margin-left: 10px;
+	font-weight: bold;
+	color: #303333;
+}
+.reply_wrap .btn_reply_cancel{
+	color: #4fbdc4;
+}
+.reply_wrap .btn_reply_modify,
+.reply_wrap .btn_reply_delete{
+	color: #9e9c9d;
+}
+.reply_wrap .btn_right_wrap{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+/* 답글 */
+.reply_wrap .reply,
+.reply_wrap .reply_cmt{
+	padding-left: 60px;
+	background: url(/images/pc/ico_reply.png) no-repeat 43px 10px;
+}
+.reply_wrap .reply_cmt .tf_wrap{
+	float: left;
+	width: 590px;
+	height: 60px;
+	margin-right: 16px;
+	border-color: #e1e1e1;
+}
+.reply_wrap .reply_cmt .tf_wrap textarea{
+	width: 580px;
+	height: 60px;
+	padding: 5px;
+	border: 1px solid #e1e1e1;
+}
+
+/* 고정 입력폼 */
+.reply_wrap .cmt_wrap{
+	padding-bottom: 10px;
+	border-bottom: 3px double #e1e1e1;
+}
+.reply_wrap .cmt_wrap .tf_wrap{
+	float: left;
+	width: 650px;
+	height: 60px;
+	padding-top: 10px;
+	margin-right: 16px;
+}
+.reply_wrap .cmt_wrap .tf_wrap textarea{
+	width: 640px;
+	height: 60px;
+	padding: 5px;
+	border: 1px solid #e1e1e1;
+}
+.reply_wrap .cmt_wrap .btn_cmt_reply{
+	margin-top: 10px;
+	border-radius: 3px;
+}
+
+/* 평가 ------------------------------------------------------ */
+.eval_wrap .tab_menu{
+	margin-bottom: 0;
+}
+.eval_wrap section{
+	position: relative;
+}
+.eval_wrap .box_eval_point{
+	position: absolute;
+	top: -33px;
+	right: 0px;
+}
+.eval_wrap .box_eval_list{
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+}
+.eval_wrap .box_eval_point strong{
+	line-height: 30px;
+	margin-right: 10px;
+	font-size: 13px;
+}
+.eval_wrap section li{
+	padding: 10px;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+/* -------- 뷰 평가 쓰기 폼 -------- */
+.eval_wrap{
+	border-top: 3px solid #4fbdc4;	
+}
+.eval_wrap > h2{
+	height: 35px;
+	line-height: 35px;
+	text-indent: 5px;
+	color: #4fbdc4;
+}
+.eval_wrap .list_eval_form{
+	background-color: #c0c0c0;
+}
+.eval_wrap .list_eval_form p{
+	line-height: 20px;
+	font-size: 13px;
+	text-align: center;
+	color: #303333;
+}
+.eval_wrap .list_eval_form .box_desc{
+	position: relative;
+	margin: 10px 0;
+	text-align: center;
+}
+.eval_wrap .list_eval_form hr{
+	position: absolute;
+	top: 9px;
+	left: 0px;
+	right: 0px;
+	height: 1px;
+	border: 0;
+	border-bottom: 1px solid #cfcfcf;
+	z-index: -1;
+}
+.eval_wrap .list_eval_form .box_star{
+	padding: 0 30px;
+}
+.eval_wrap .list_eval_form .box_star .selected{
+	animation: bounce 1000ms ease-in-out infinite;
+	-webkit-animation: bounce 1000ms ease-in-out infinite;
+}
+.eval_wrap .list_eval_form .box_textarea{
+	width: 636px;
+	height: 60px;
+	min-height: 60px;
+	margin: 0px;
+}
+
+/* -------- 평가 리스트 -------- */
+.eval_wrap .list_eval:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.eval_wrap .list_eval .box_eval_user{
+	float: left;
+	width: 60px;
+	margin-right: 20px;
+}
+.eval_wrap .list_eval .box_eval_user .name{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+	width: 60px;
+	line-height: 13px;
+	margin-top: 10px;
+	text-align: center;
+	color: #303333;
+}
+.eval_wrap .list_eval .box_eval_con{
+	width: 668px;
+}
+.eval_wrap .list_eval .box_eval_con,
+.eval_wrap .list_eval .box_eval_con .box_receive_star{
+	float: left;
+}
+.eval_wrap .list_eval .box_eval_con .box_receive_star{
+	position: static;
+}
+.eval_wrap .list_eval .box_eval_con time{
+	float: right;
+	color: #8d8d8d;
+}
+.eval_wrap .list_eval .box_eval_con .box_eval_txt{
+	clear: both;
+	min-height: 50px;
+	line-height: 20px;
+	padding: 5px;
+	margin-top: 30px;
+	border: 1px solid #cfcfcf;
+	border-radius: 3px;
+	background-color: #fafafa;
+}
+
+/* tabmenu------------------------------------------------------ */
+.tab_menu{
+	height: 35px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #40494C;
+}
+.tab_menu .btn_tab{
+	vertical-align: top;
+	display: inline-block;
+	width: 120px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 3px 3px 0 0;
+	border-bottom: 0;
+	color: #303333;
+	background-color: #e1e1e1;
+}
+.tab_menu .btn_tab:hover{
+	text-decoration: none;
+	background-color: #cfcfcf;
+}
+.tab_menu .btn_tab.selected{
+	font-weight: bold;
+	color: #fff;
+	background-color: #40494C;
+}
+.tab_menu2{
+	height: 35px;
+	padding: 0px 0 15px 0;
+}
+.tab_menu2 .btn_tab{
+	vertical-align: top;
+	display: inline-block;
+	width: 49.5%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-bottom: 0;
+	border-left: 1px solid #acacac;
+	color: #303333;
+}
+.tab_menu2 .btn_tab:hover{
+	text-decoration: none;
+}
+.tab_menu2 .btn_tab.selected{
+	font-weight: bold;
+}
+
+/* board main ------------------------------------------------------ */
+#boardMain > article{
+	border: 0;
+}
+#boardMain > article:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.main_col{
+	float: left;
+	width: 374px;
+	padding: 20px 0;
+}
+.main_col_lt{
+	padding: 20px 40px 20px 0px;
+}
+.main_col .main_con{
+	position: relative;
+}
+.main_col h2 .link_board{
+	display: block;
+	margin: 0 0 15px;
+	font-size: 15px;
+	color: #303333;
+}
+.main_col .link_atc{
+	display: block;
+	margin-bottom: 10px;
+	color: #303333;
+}
+.main_col .link_atc span{
+	vertical-align: top;
+	display: inline-block;
+}
+.main_col .link_atc .atc_title{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 274px;
+}
+.main_col .link_atc .atc_reply{
+	width: 50px;
+	text-align: right;
+	color: #FF3061;
+}
+.main_col .link_atc .atc_date{
+	width: 50px;
+	text-align: right;
+}
+.main_col h2 .link_board:hover,
+.main_col h2 .link_board:focus,
+.main_col .link_atc:hover,
+.main_col .link_atc:focus{
+	text-decoration: none;
+	color: #FF3061;
+}
+
+/* -------- 더보기 버튼 -------- */
+.main_col .link_more{
+	position: absolute;
+	top: 2px;
+	right: 0px;
+	color: #303333;
+}
+.main_col .link_more:hover,
+.main_col .link_more:focus{
+	color: #FF3061;
+	text-decoration: none;
+}
+
+/* 이용약관 및 개인정보 취급방침 페이지 ------------------------------------------------------- */
+#privacyAndRules h1{
+	font-size: 14px;
+	color: #333;
+}
+#privacyAndRules h2{
+	font-size: 12px;
+	color: #555;
+}
+#privacyAndRules fieldset{
+	clear: both;
+	line-height: 20px;
+	padding: 0 10px;
+}
+#privacyAndRules fieldset a{
+	color: #303333;
+}
+#privacyAndRules fieldset a:hover{
+	text-decoration: none;
+}
+#privacyAndRules nav:after{
+	clear: both;
+}
+#privacyAndRules nav ul li{
+	display: inline-block;
+	width: 390px;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 20px;
+	border: 1px solid #dedede;
+	background: #f9f9f9;
+}
+#privacyAndRules nav ul li a{
+	display: block;
+	color: #333;
+}
+#privacyAndRules nav ul li a:before{
+	content: '※';
+}
+#privacyAndRules nav ul .selected a:before{
+	content: '▶';
+}
+#privacyAndRules nav ul .selected, 
+#privacyAndRules nav ul li:hover{
+	background: #ebebeb;
+}
+/* //이용약관 및 개인정보 취급방침 페이지 ------------------------------------------------------- */
+
+
+/* footer product list ------------------------------------------------------ */
+.footer_prdc h2{
+	padding-bottom: 5px;
+	margin: 10px 0;
+	border-bottom: 1px solid #F0F0F0;
+	font-size: 1.2em;
+}
+.footer_prdc{
+	width: 1024px;
+	min-width: 1024px;
+	margin: auto;
+}
+.footer_prdc ul:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.footer_prdc ul li{
+	float: left;
+	width: 158px;
+	margin-right: 15px;
+}
+.footer_prdc ul li:last-child{
+	margin-right: 0;
+}
+.footer_prdc .sct_img{
+	margin-bottom: 10px;
+}
+.footer_prdc .sct_txt a{
+	display: block;
+	margin-bottom: 5px;
+	color: #303333;
+}
+.footer_prdc .sct_cost{
+	position: relative;
+	display: block;
+    margin: 0 0 10px;
+	font-size: 1.2em;
+    font-weight: bold;
+}
+.footer_prdc .sct_discount{
+
+}
+.footer_prdc .sct_discount del{
+	display: block;
+    margin: 0 0 5px;
+    color: #999;
+	font-size: 1em;
+    font-weight: normal
+}
+.footer_prdc .sct_discount strong{
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	font-size: 1.3em;
+	color: #ff0544;
+}
+
+/* footer ------------------------------------------------------- */
+#footer{
+	clear: both;
+	background-color: #3e4d5c;
+	z-index: 10;
+}
+.foot{
+	overflow: hidden;
+	width: 974px;
+	min-width: 974px;
+	margin: auto;
+	padding: 0 25px 20px 25px;
+}
+.foot_top{
+	height: 75px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #53606e;
+}
+.foot_top_lt{
+	float: left;
+	padding-top: 30px;
+}
+.foot_top_lt .logo,
+.foot_top_lt .btn_share_mark{
+	vertical-align: top;
+	display: inline-block;
+}
+.foot_top_lt .logo{
+	margin-right: 30px;
+}
+.foot_top_rt li{
+	display: inline-block;
+}
+.foot_top_rt{
+	float: right;
+	padding-top: 20px;
+}
+.foot_top_rt .tikle_social{
+	position: relative;
+	display: block;
+	width: 48px;
+	height: 48px;
+	background: url(/images/pc/icon.png) no-repeat -1px -171px;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; 
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60); 
+	opacity: .6;
+}
+.foot_top_rt .tikle_fb{
+	margin: 0 10px;
+	background-position: -50px -171px;
+}
+.foot_top_rt .tikle_twit{
+	background-position: -99px -171px;
+}
+.foot_top_rt .tikle_social:hover{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	animation: bounce 1000ms ease-in-out;
+	-webkit-animation: bounce 1000ms ease-in-out;
+}
+.foot_bot{
+	clear: both;
+	padding-top: 10px
+}
+.foot_bot .information,
+.foot_bot .company,
+.foot_bot .fb_like_share{
+	vertical-align: top;
+	display: inline-block;
+}
+.foot_bot .fb_like_share{
+	padding-top: 18px;
+	padding-left: 50px;
+}
+.foot_bot .foot_title{
+	display: block;
+	padding: 20px 0 15px 0;
+	font-size: 14px;
+	color: #4fbdc4;
+}
+.foot_bot .tikle_info{
+	display: block;
+	padding-bottom: 8px;
+	color: #fff;
+}
+.foot_bot .information{
+	margin-right: 90px;
+}
+.foot_bot .tikle_info a,
+.foot_bot .company p,
+.foot_bot strong.foot_title{
+	color: #fff;
+}
+.foot_bot .img_escrow{
+	text-align: right;
+	padding-top: 30px;
+}
+
+/* //footer ------------------------------------------------------- */
+
+/* animation ------------------------------------------------------ */
+/* bounce */
+@-webkit-keyframes bounce{
+    0% {-webkit-transform: translateY(0px);}
+    10% {-webkit-transform: translateY(-1px);}
+    20% {-webkit-transform: translateY(-4px);}
+    30% {-webkit-transform: translateY(-4.5px);}
+    40% {-webkit-transform: translateY(-3px);}
+    50% {-webkit-transform: translateY(-1px);}
+    60% {-webkit-transform: translateY(-2px);}
+    70% {-webkit-transform: translateY(-1.5px);}
+    80% {-webkit-transform: translateY(-1.2px);}
+    90% {-webkit-transform: translateY(-1px);}
+	99% {-webkit-transform: translateY(0px);}
+	100% {}
+}
+@-moz-keyframes bounce{
+    0% {-moz-transform: translateY(0px);}
+    10% {-moz-transform: translateY(-1px);}
+    20% {-moz-transform: translateY(-4px);}
+    30% {-moz-transform: translateY(-4.5px);}
+    40% {-moz-transform: translateY(-3px);}
+    50% {-moz-transform: translateY(-1px);}
+    60% {-moz-transform: translateY(-2px);}
+    70% {-moz-transform: translateY(-1.5px);}
+    80% {-moz-transform: translateY(-1.2px);}
+    90% {-moz-transform: translateY(-1px);}
+	99% {-moz-transform: translateY(0d);}
+	100% {}
+}
+@keyframes bounce{
+    0% {transform: translateY(0px);}
+    10% {transform: translateY(-1px);}
+    20% {transform: translateY(-4px);}
+    30% {transform: translateY(-4.5px);}
+    40% {transform: translateY(-3px);}
+    50% {transform: translateY(-1px);}
+    60% {transform: translateY(-2px);}
+    70% {transform: translateY(-1.5px);}
+    80% {transform: translateY(-1.2px);}
+    90% {transform: translateY(-1px);}
+	99% {transform: translateY(0px);}
+	100% {}
+}
+
+/* vibe */
+@-webkit-keyframes vibe{
+    0% { -webkit-transform: skewX(9deg); }
+    10% { -webkit-transform: skewX(-8deg); }
+    20% { -webkit-transform: skewX(7deg); }
+    30% { -webkit-transform: skewX(-6deg); }
+    40% { -webkit-transform: skewX(5deg); }
+    50% { -webkit-transform: skewX(-4deg); }
+    60% { -webkit-transform: skewX(3deg); }
+    70% { -webkit-transform: skewX(-2deg); }
+    80% { -webkit-transform: skewX(1deg); }
+    90% { -webkit-transform: skewX(0deg); }
+	100% { -webkit-transform: skewX(0deg); }
+}
+@-moz-keyframes vibe{
+    0% { -moz-transform: skewX(9deg); }
+    10% { -moz-transform: skewX(-8deg); }
+    20% { -moz-transform: skewX(7deg); }
+    30% { -moz-transform: skewX(-6deg); }
+    40% { -moz-transform: skewX(5deg); }
+    50% { -moz-transform: skewX(-4deg); }
+    60% { -moz-transform: skewX(3deg); }
+    70% { -moz-transform: skewX(-2deg); }
+    80% { -moz-transform: skewX(1deg); }
+    90% { -moz-transform: skewX(0deg); }
+	100% { -moz-transform: skewX(0deg); }
+}
+@keyframes vibe{
+    0% { transform: skewX(9deg); }
+    10% { transform: skewX(-8deg); }
+    20% { transform: skewX(7deg); }
+    30% { transform: skewX(-6deg); }
+    40% { transform: skewX(5deg); }
+    50% { transform: skewX(-4deg); }
+    60% { transform: skewX(3deg); }
+    70% { transform: skewX(-2deg); }
+    80% { transform: skewX(1deg); }
+    90% { transform: skewX(0deg); }
+	100% { transform: skewX(0deg); }
+}
+
+/* paging ------------------------------------------------------ */
+.paging{
+	clear: both;
+	position: relative;
+	display: inline-block;
+	padding: 10px 0;
+	margin: auto;
+	margin-top: 50px;
+	border-radius: 5px;
+}
+.paging:after{
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: 0px;
+	width: 100%;
+	height: 1px;
+	border-top: 1px dashed #e1e1e1;
+}
+.paging a,
+.paging strong{
+	float: left;
+	display: block;
+	min-width: 30px;
+	padding: 0 5px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 1px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 14px;
+	color: #40494c;
+	background-color: #f7f7f7;
+	transition: all .2s ease;
+	-webkit-transition: all .2s ease;
+}
+.paging a:hover,
+.paging a:focus,
+.paging strong{
+	text-decoration: none;
+	border-color: #40494c;
+}
+.paging .direction{
+	width: auto;
+	padding: 0 10px;
+	margin: 0px 5px;
+	border-color: #e1e1e1;
+	background-color: #fff;
+}
+.paging a:active{
+	background-color: #c1cfd2;
+}
+
+/* pc 모바일 버전으로 보기 버튼 ------------------------------------------------------ */
+@media only screen and (max-width: 640px){
+	.btn_view_mobile{
+		display: block !important;
+		width: 100%;
+		height: 100px;
+		line-height: 100px;
+		text-align: center;
+		font-size: 2em;
+		color: #303333;
+		background-color: #e1e1e1;
+	}
+}
