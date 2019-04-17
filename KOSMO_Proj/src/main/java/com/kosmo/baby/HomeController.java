@@ -53,7 +53,7 @@ public class HomeController {
 	@RequestMapping("/sign_up_page.kosmo")
 	public String sign_up_page() {
 		
-		return "sign_up_page.tiles";
+		return "signup_page.tiles";
 		
 	}
 	

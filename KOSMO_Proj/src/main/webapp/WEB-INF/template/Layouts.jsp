@@ -22,7 +22,7 @@
 	<!-- 아이콘 -->
     <link rel="stylesheet" href="Bootstrap/fonts/icomoon/style.css">
 
-	
+	<!-- 기본 스타일 -->
 	<link rel="stylesheet" href="Bootstrap/css/style.css">
 	
     <!-- 캐러셀 -->
