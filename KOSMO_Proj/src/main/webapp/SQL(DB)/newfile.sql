@@ -109,7 +109,7 @@ CREATE TABLE Members
 	-- 영문과 숫자와 특수문자의 조합으로...
 	PWD varchar2(16) NOT NULL,
 	Addr nvarchar2(100) NOT NULL,
-	Tel number NOT NULL,
+	Tel nvarchar2(50) NOT NULL,
 	Email varchar2(50) NOT NULL,
 	-- 이메일 인증용 랜덤키 입니다.
 	AUTHKEY nvarchar2(50),
