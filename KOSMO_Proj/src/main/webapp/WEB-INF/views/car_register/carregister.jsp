@@ -33,10 +33,10 @@ border: none;
 			<div class="col-md-3 order-md-2 mb 4">
 				<img alt="지도이미지"
 					src="Bootstrap/images/epl.png"
-					style="width: 400px; height: 450px; margin-left: -150px; margin-right: auto;">
+					style="width: 420px; height: 450px; margin-left: -150px; margin-right: auto;">
 			</div>
 
-			<div class="col-md-8 " style="padding-left: 3em">
+			<div class="row col-md-9 " style="padding-left: 3em">
 				<div class="row col-md-12" style="margin-bottom: 50px">
 					<label style="margin-top: 20px; margin-right: 20px">유형: </label> 
 					<div id = "affected">					
@@ -44,25 +44,25 @@ border: none;
 						<input type="radio" name="set 2" title="태워주세요">
 					</div>
 				
-					<div class="row col-md-8" style="margin-bottom: 50px;margin-top:30px">
+					<div class="row col-md-5" style="margin-bottom: 50px;margin-top:30px">
 						<label style="margin-top: 9px; margin-right: 20px">목적: </label> 
-						<select	class="form-control col-md-6" id="목적">
+						<select	class="form-control col-md-8" id="목적">
 							<option>출근</option>
 							<option>퇴근</option>
 							<option>출퇴근</option>
 						</select>
 					</div>
-					<div class="row" style="margin-bottom: 50px">
+					<div class="row col-md-8" style="margin-bottom: 50px">
 						<label style="margin-top: 9px; margin-right: 20px">출발지: </label>
-						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요" />
+						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요!!!" />
 					</div>
-					<div class="row" style="margin-bottom: 50px">
+					<div class="row col-md-8" style="margin-bottom: 50px">
 						<label style="margin-top: 9px; margin-right: 20px">도착지: </label>
-						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요" />
+						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요!!!" />
 					</div>
-					<div class="row" style="margin-bottom: 50px">
+					<div class="row col-md-8" style="margin-bottom: 50px">
 						<label style="margin-top: 9px; margin-right: 20px">경유지: </label>
-						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요" />
+						<input type="text" class="form-control col-md-9" placeholder="위치 입력해주세요!!!" />
 					</div>				
 				</div>				
 			</div>						
